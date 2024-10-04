@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прейскурант</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Прейскурант услуг</h1>
+        <div class="grid">
+            <div class="tile" onclick="showModal('modal1')">
+                <div class="service">Выкорчевывание пней</div>
+                <div class="price">500 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal2')">
+                <div class="service">Обрезка деревьев</div>
+                <div class="price">800 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal3')">
+                <div class="service">Стрижка газона</div>
+                <div class="price">300 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal4')">
+                <div class="service">Уборка территории</div>
+                <div class="price">400 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal5')">
+                <div class="service">Удаление кустарников</div>
+                <div class="price">600 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal6')">
+                <div class="service">Посадка деревьев</div>
+                <div class="price">1000 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal7')">
+                <div class="service">Установка ограждений</div>
+                <div class="price">1500 рублей</div>
+            </div>
+            <div class="tile" onclick="showModal('modal8')">
+                <div class="service">Полив газона</div>
+                <div class="price">200 рублей</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Наложение -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Модальные окна -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Выкорчевывание пней">
+            <div class="description">Услуга по удалению пней всех размеров. Подходит для любых видов участков.</div>
+            <div class="price">Цена: 500 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Обрезка деревьев">
+            <div class="description">Обрезка деревьев высотой до 5 метров. Придание формы, улучшение роста.</div>
+            <div class="price">Цена: 800 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Стрижка газона">
+            <div class="description">Профессиональная стрижка газонов площадью до 100 м². Быстро и аккуратно.</div>
+            <div class="price">Цена: 300 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal4')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Уборка территории">
+            <div class="description">Услуга по уборке мусора и листвы с дачных и приусадебных участков.</div>
+            <div class="price">Цена: 400 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal5')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Удаление кустарников">
+            <div class="description">Полное удаление кустарников любой густоты и на любых участках.</div>
+            <div class="price">Цена: 600 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal6')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Посадка деревьев">
+            <div class="description">Посадка деревьев разных пород с гарантией приживаемости.</div>
+            <div class="price">Цена: 1000 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal7')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Установка ограждений">
+            <div class="description">Установка ограждений для участков различной площади.</div>
+            <div class="price">Цена: 1500 рублей</div>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal8')">&times;</button>
+            <img src="https://via.placeholder.com/600x400" alt="Полив газона">
+            <div class="description">Регулярный и качественный полив газонов.</div>
+            <div class="price">Цена: 200 рублей</div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(id) {
+            const modal = document.getElementById(id);
+            const overlay = document.getElementById('overlay');
+            modal.classList.add('active');
+            overlay.style.display = 'block'; // Показать наложение
+            setTimeout(() => overlay.style.opacity = '1', 10); // Добавить задержку для эффекта
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const overlay = document.getElementById('overlay');
+            modal.classList.remove('active');
+            overlay.style.opacity = '0'; // Скрыть наложение с анимацией
+            setTimeout(() => overlay.style.display = 'none', 300); // Скрыть полностью после анимации
+        }
+    </script>
+
+</body>
+</html>
